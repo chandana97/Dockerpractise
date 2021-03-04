@@ -1,1 +1,4 @@
-Exception in thread "main" java.lang.UnsupportedClassVersionError: com/example/dockerpractise/DockerpractiseApplication has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ADD target/dockerpractise-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
